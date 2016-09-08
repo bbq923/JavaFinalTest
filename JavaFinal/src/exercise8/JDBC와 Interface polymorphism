@@ -1,0 +1,11 @@
+자바의 interface는 abstract 클래스와 달리 구현된 메서드를 전혀 포함하지 않는다. 
+즉, interface의 메서드들은 메서드 시그니처만 가지고 있다. 
+interface는 그것을 상속받은 클래스들의 구현의 방향을 설정하는 설계도와 같은 역할을 한다. 
+
+자바에서 DB를 이용한 작업을 할 때, vendor가 제공하는 DB가 여러 종류이기 때문에
+각각의 DB마다 조금씩 다른 코드를 작성하려면 매우 피곤할 것이다. 그래서 JDBC는 
+Connection, Statement, ResultSet의 interface를 제공한다. 데이터베이스 내부적인 작업을 
+처리하는 구현체는 각 Vendor사에서 제공하고 JDBC는 단지 이 구현체들과 연결시키는 작업을 수행한다. 
+이 연결시키는 connection 들을 polymorphism(다형성)하게 구현해서 DB가 달라질 때마다 
+환경파일을 수정하는 것으로 알맞은 connection을 사용해 해당 DB와 연결할 수 있다.
+ 
